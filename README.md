@@ -72,7 +72,7 @@ All platform data—including configurations, accounts, resource quotas, and ses
 * **LICENSE** (Simple Hosting Platform AGPLv3 Licence)
 * **README.md** 
 
-**NOTE:** Folder names like `@` or `#` are Turbo server conventions, visit its [documentation](https://turbo.okzgn.com) or check out the [repository](https://github.com/okzgn/turbo-go) for more information.
+**NOTE:** Folder names like `@` or `#` are Turbo server conventions. Visit its [documentation](https://turbo.okzgn.com) or check out the [repository](https://github.com/okzgn/turbo-go) for more information.
 
 ---
 
