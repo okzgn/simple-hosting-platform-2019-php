@@ -1,4 +1,4 @@
-# Flat-File Hosting Platform
+# Simple Hosting Platform
 
 A high-performance, lightweight, multi-tenant multi-site web hosting and CMS engine built in native PHP without database dependencies.
 
@@ -10,7 +10,7 @@ A high-performance, lightweight, multi-tenant multi-site web hosting and CMS eng
 
 ## 📋 Overview
 
-**Flat-File Hosting Platform** is a self-contained, multi-tenant multi-site web hosting and lightweight CMS engine. It handles automated tenant provisioning, real-time resource metering (bandwidth and disk usage), access control, and tenant management without relying on database systems.
+**Simple Hosting Platform** is a self-contained, multi-tenant multi-site web hosting and lightweight CMS engine. It handles automated tenant provisioning, real-time resource metering (bandwidth and disk usage), access control, and tenant management without relying on database systems.
 
 All platform data—including configurations, accounts, resource quotas, and sessions—is managed via **flat-files** using thread-safe file-locking mechanisms (`flock`) to maintain data integrity under concurrent requests.
 
@@ -73,7 +73,7 @@ All platform data—including configurations, accounts, resource quotas, and ses
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/okzgn/flat-file-hosting-platform-php.git
+   git clone https://github.com/okzgn/simple-hosting-platform-php.git
    ```
 
 2. **Main Site Server Configuration:**
