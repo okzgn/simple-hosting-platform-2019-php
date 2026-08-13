@@ -44,7 +44,7 @@ All platform data—including configurations, accounts, resource quotas, and ses
 
 ## 📂 Directory Structure
 
-**localhost:**
+* **localhost:**
 ```text
 ├── #                                   # Wildcard subdomain sites handler
 │   └── @
@@ -64,9 +64,15 @@ All platform data—including configurations, accounts, resource quotas, and ses
 │       │
 │       └── ...                         # Hosting config & cost files (do not edit manually)
 │
-├── @                                   # MAIN SITE landing page & assets
+└── @                                   # MAIN SITE landing page & assets
 ```
-**NOTE:** Folder names like `@` or `#` are Turbo server conventions. You can visit its [documentation](https://turbo.okzgn.com) or check out the [repository](https://github.com/okzgn/turbo-go).
+* **turbo** (Turbo Linux binary)
+* **turbo.exe** (Turbo Windows binary)
+* **turbo.config** (Turbo cross-platform configuration)
+* **LICENSE** (Simple Hosting Platform AGPLv3 Licence)
+* **README.md** 
+
+**NOTE:** Folder names like `@` or `#` are Turbo server conventions, visit its [documentation](https://turbo.okzgn.com) or check out the [repository](https://github.com/okzgn/turbo-go) for more information.
 
 ---
 
@@ -93,7 +99,7 @@ All platform data—including configurations, accounts, resource quotas, and ses
      ```
 
 3. **Wildcard Subdomain Sites Handler PHP Configuration:**
-   * Open your browser and navigate to the Turbo Admin Panel: `http://localhost/admin:`
+   * Open your browser and navigate to the Turbo server GUI: `http://localhost/admin:`
    * Navigate to `localhost` and select the wildcard (`*`) subdomain.
    * Configure the Preprocessor for the `php` extension, pointing to your local PHP binary (e.g., `C:\php\php-cgi.exe` or `/usr/bin/php-cgi`).
 
