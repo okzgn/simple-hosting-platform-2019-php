@@ -44,7 +44,7 @@ All platform data—including configurations, accounts, resource quotas, and ses
 
 ## 📂 Directory Structure
 
-* **localhost:** (All hosting platform dir)
+* **localhost/** (All hosting platform dir)
 ```text
 ├── #                                   # Wildcard subdomain sites dir
 │   ├── fullchain.pem                   # Wildcard subdomain SSL cert fullchain file (replace with production cert file)
@@ -60,7 +60,7 @@ All platform data—including configurations, accounts, resource quotas, and ses
 │       ├── legacy.localhost/           # HOSTING SITE (Admin & Order Console)
 │       │   ├── cfg/docs/               # Hosting administration panels & app files
 │       │   ├── dynamics.php            # Hosting primary dynamic router
-│       │   ├── editor/                 # Per hosted site (including Hosting Site, TinyMCE editor files)
+│       │   ├── editor/                 # Per hosted site (including Hosting Site) TinyMCE editor files
 │       │   └── ...                     # Hosting static assets
 │       │
 │       ├── prueba.localhost/           # HOSTED TENANT Site Demo
