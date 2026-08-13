@@ -47,6 +47,8 @@ All platform data—including configurations, accounts, resource quotas, and ses
 * **localhost:**
 ```text
 ├── #                                   # Wildcard subdomain sites handler
+│   ├── fullchain.pem                   # Wildcard subdomain SSL cert fullchain file (replace with production cert file)
+│   ├── privkey.pem                     # Wildcard subdomain SSL cert privkey file (replace with production cert file)
 │   └── @
 │       ├── c3/                         # CENTRAL CORE ENGINE
 │       │   ├── adapter.php             # Routing & request adapter
@@ -64,15 +66,17 @@ All platform data—including configurations, accounts, resource quotas, and ses
 │       │
 │       └── ...                         # Hosting config & cost files (do not edit manually)
 │
-└── @                                   # MAIN SITE landing page & assets
+├── @                                   # MAIN SITE landing page & assets
+├── fullchain.pem                       # Main site SSL cert fullchain file (replace with production cert file)
+└── privkey.pem                         # Main site SSL cert privkey file (replace with production cert file)
 ```
 * **turbo** (Turbo Linux binary)
 * **turbo.exe** (Turbo Windows binary)
 * **turbo.config** (Turbo cross-platform configuration)
-* **LICENSE** (Simple Hosting Platform AGPLv3 Licence)
-* **README.md** 
+* **LICENSE** (Simple Hosting Platform AGPLv3 License)
+* **README.md** (This file)
 
-**NOTE:** Folder names like `@` or `#` are Turbo server conventions. Visit its [documentation](https://turbo.okzgn.com) or check out the [repository](https://github.com/okzgn/turbo-go) for more information.
+> **NOTE:** Folder names like `@` or `#` are Turbo server conventions. Visit its [documentation](https://turbo.okzgn.com) or check out the [repository](https://github.com/okzgn/turbo-go) for more information.
 
 ---
 
