@@ -6,7 +6,8 @@ if (!class_exists('ZipArchive')) {
 $Z = new ZipArchive();
 if($Z->open('cfg/docs/blank_site.zip') !== true){ echo '<p data-err>Inténtelo luego</p>'; }
 else {
-	/* COUPON */ $_POST['k'] = (!isset($_POST['k']) ? '' : $_POST['k']);
+	# COUPON
+	$_POST['k'] = (!isset($_POST['k']) ? '' : $_POST['k']);
 
 	switch($_POST['k']){
 		case 'FREE-12082026':
@@ -19,24 +20,41 @@ else {
 
 	$_POST['s'][0] *= (($_POST['s'][1] != 'GB') ? $M : $G);
 	$_POST['b'][0] *= (($_POST['b'][1] != 'GB') ? $M : $G);
-	$C['diskspace'] = (($C['diskspace'] * $G) - $_POST['s'][0] + $C['diskspace_reserved']);
-	$C['output'] = (($C['output'] * $G) - $_POST['b'][0] + $C['output_reserved']);
-
-	fseek($F, 0);
-	ftruncate($F, 0);
-
-	fwrite($F, serialize($C));
-	fflush($F);
-	flock($F, LOCK_UN);
-	fclose($F);
-	unset($C);
 
 	$_POST['r'] = ($_SERVER['DOCUMENT_ROOT'] . ('/' . $_POST['i'] . '.localhost/'));
-	mkdir($_POST['r'], 0777, 1);
-	$Z->extractTo($_POST['r']);
-	$Z->close();
 
-	@mkdir($_POST['r'] . 'cfg/', 0777, true);
+	if(!is_dir($_POST['r']) && !file_exists($_POST['r']) && is_writable(dirname($_POST['r']))){
+		$MF = mkdir($_POST['r'], 0777, true);
+		$CF = mkdir($_POST['r'] . 'cfg/', 0777, true);
+
+		if($MF && $CF){
+		    # Updating real time hosting capacities
+    		$C['diskspace'] = (($C['diskspace'] * $G) - $_POST['s'][0] + $C['diskspace_reserved']);
+    		$C['output'] = (($C['output'] * $G) - $_POST['b'][0] + $C['output_reserved']);
+
+    		fseek($F, 0);
+    		ftruncate($F, 0);
+
+    		fwrite($F, serialize($C));
+    		fflush($F);
+    		flock($F, LOCK_UN);
+    		fclose($F);
+    		unset($C);
+
+    		$Z->extractTo($_POST['r']);
+    		$Z->close();
+		}
+		else {
+		    $Z->close();
+		    echo '<p data-err>Inconveniente al configurar tu sitio.</p>';
+            exit;
+		}
+	}
+	else {
+	    $Z->close();
+        echo '<p data-err>Este sitio ya ha sido creado.</p>';
+        exit;
+	}
 
 	$PWD = password_hash($_POST['p'], PASSWORD_DEFAULT);
 

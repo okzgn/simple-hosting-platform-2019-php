@@ -103,12 +103,19 @@ $J = '';
 
 function d($D, $F){
 	if(($F == '.') || ($F == '..')){ return; }
-	if(!is_dir($D . $F)){ return unlink($D . $F); }
+	if(!is_dir($D . $F)){
+    	if(is_writable($D . $F)){
+    		return unlink($D . $F);
+    	}
+    	return;
+	}
 	$D = ($D . $F . '/');
 	if($E = opendir($D)){
 		while(($F = readdir($E)) !== false){ d($D, $F); }
 		closedir($E);
-		@rmdir($D);
+		if(is_dir($D) && is_writable($D)){
+			rmdir($D);
+		}
 	}
 }
 

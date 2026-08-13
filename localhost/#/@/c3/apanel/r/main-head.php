@@ -1,6 +1,6 @@
 ﻿<?php
 
-$S = 'https://legacy.localhost'; /*('http' . (!isset($_SERVER['HTTPS']) ? '' : 's') . '://' . $_GET['site']);*/
+$S = ('http' . (!isset($_SERVER['HTTPS']) ? '' : 's') . '://' . $_GET['site']);
 $N = $_GET['site'];
 
 echo <<<HTML
