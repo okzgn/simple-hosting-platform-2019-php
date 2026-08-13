@@ -74,6 +74,7 @@ else {
     	$PWD = password_hash($_POST['p'], PASSWORD_DEFAULT);
 
     	file_put_contents($_POST['r'] . 'cfg/index.php', '<?php http_response_code(403); die(); ?>');
+        file_put_contents(($_POST['r'] . 'cfg/output'), '0', LOCK_EX);
     	file_put_contents(($_POST['r'] . 'cfg/login'), serialize(['login' => ['user' => $_POST['u'], 'password' => $PWD]]), LOCK_EX);
     	file_put_contents(($_POST['r'] . 'cfg/properties'), serialize(['properties' => ['diskspace' => $_POST['s'][0], 'output' => $_POST['b'][0], 'output_lastReset' => $Z, 'diskspace_unity' => $_POST['s'][1], 'output_unity' => $_POST['b'][1]]]), LOCK_EX);
     	file_put_contents(($_POST['r'] . 'cfg/account'), serialize(['account' => ['coupon' => $_POST['k'], 'creation'=> $Z, 'templates' => $_POST['t'], 'components' => $_POST['c'], 'homepage' => 'inicio.html']]), LOCK_EX);

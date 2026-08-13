@@ -2,7 +2,7 @@
 foreach($_FILES as $K => $V){
     if(!is_array($V['error'])){ continue; }
 	foreach($V['error'] as $A => $B){
-		if($B){
+		if($B || $V['size'][$A] > 1048576){ # 1 MB per file size upload limit
 			unset($V['name'][$A], $V['type'][$A], $V['size'][$A], $V['tmp_name'][$A], $V['error'][$A]);
 			continue;
 		}

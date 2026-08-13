@@ -401,14 +401,18 @@ foreach(scandir($D) as $F){
 	foreach($X as $K => $V){
 		if($K == 'password'){ $V = ''; }
 		$T = gettype($V);
+		$K = htmlspecialchars($K, ENT_QUOTES, 'UTF-8');
 		switch($T){
 			case 'array':
+			    $V[0] = htmlspecialchars($V[0], ENT_QUOTES, 'UTF-8');
+				$V[1] = htmlspecialchars($V[1], ENT_QUOTES, 'UTF-8');
 				$Y .= '<div><h4>' . $K . '</h4><input type="hidden" name="' . $K . '">';
 				$Y .= '<p><b>0:</b> <input type="text" name="' . $K . '[0]" value="' . $V[0] . '"></p><p><b>1:</b> <input type="text" name="' . $K . '[1]" value="' . $V[1] . '"></p>';
 				$Y .= '</div>';
 			break;
 			default:
 			if($T == 'string' || $T == 'integer' || $T == 'double'){
+			    $V = htmlspecialchars($V, ENT_QUOTES, 'UTF-8');
 				$Y .= '<p><b>' . $K . ':</b>';
 				$Y .= ' <input type="' . (($K != 'password') ? 'text' : $K) . '" name="' . $K . '" value="' . $V . '"></p>';
 			}

@@ -2,7 +2,7 @@
 
 $F = fopen(($_SESSION['F'] . 'properties'), 'r');
 flock($F, LOCK_SH);
-$P = unserialize(fread($F, 200));
+$P = unserialize(fread($F, 256));
 
 $DISKSPACE_UNITY = $P['properties']['diskspace_unity'];
 $DISKSPACE_UNITY_VAL = (($DISKSPACE_UNITY != 'GB') ? (1024 * 1024) : (1024 * 1024 * 1024));

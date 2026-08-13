@@ -130,6 +130,7 @@ By default, the codebase references `legacy.localhost` as the master domain for 
 
 * Perform an exhaustive global search-and-replace across the entire project for `legacy.localhost` and replace all occurrences with your actual master domain (e.g., `yourdomain.com`).
 * Ensure your DNS provider includes a Wildcard A/AAAA record (`*.yourdomain.com`) pointing to your server's IP address so automated tenant subdomains resolve correctly.
+* If you put your server behind a reverse proxy (like Nginx or Cloudflare), all IPs will appear to be that of the proxy, potentially banning all your users at once. Consider reading headers like `HTTP_X_FORWARDED_FOR` (instead of `$_SERVER['REMOTE_ADDR']`) if you trust the proxy.
 
 ---
 
