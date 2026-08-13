@@ -44,12 +44,12 @@ All platform data—including configurations, accounts, resource quotas, and ses
 
 ## 📂 Directory Structure
 
-* **localhost:**
+* **localhost:** (All hosting platform dir)
 ```text
-├── #                                   # Wildcard subdomain sites handler
+├── #                                   # Wildcard subdomain sites dir
 │   ├── fullchain.pem                   # Wildcard subdomain SSL cert fullchain file (replace with production cert file)
 │   ├── privkey.pem                     # Wildcard subdomain SSL cert privkey file (replace with production cert file)
-│   └── @
+│   └── @                               # WILDCARD SITES handler dir (Hosted sites handler)
 │       ├── c3/                         # CENTRAL CORE ENGINE
 │       │   ├── adapter.php             # Routing & request adapter
 │       │   ├── apanel/                 # Tenant client admin panel
@@ -58,15 +58,16 @@ All platform data—including configurations, accounts, resource quotas, and ses
 │       │   └── uses/                   # Sessions, timezone, and utilities
 │       │
 │       ├── legacy.localhost/           # HOSTING SITE (Admin & Order Console)
-│       │   ├── cfg/docs/               # Hosting administration panels
+│       │   ├── cfg/docs/               # Hosting administration panels & app files
 │       │   ├── dynamics.php            # Hosting primary dynamic router
-│       │   └── ...                     # Hosting static assets (e.g., editor)
+│       │   ├── editor/                 # Per hosted site (including Hosting Site, TinyMCE editor files)
+│       │   └── ...                     # Hosting static assets
 │       │
 │       ├── prueba.localhost/           # HOSTED TENANT Site Demo
 │       │
 │       └── ...                         # Hosting config & cost files (do not edit manually)
 │
-├── @                                   # MAIN SITE landing page & assets
+├── @                                   # MAIN SITE landing page & assets dir
 ├── fullchain.pem                       # Main site SSL cert fullchain file (replace with production cert file)
 └── privkey.pem                         # Main site SSL cert privkey file (replace with production cert file)
 ```
@@ -102,7 +103,7 @@ All platform data—including configurations, accounts, resource quotas, and ses
      turbo.exe
      ```
 
-3. **Wildcard Subdomain Sites Handler PHP Configuration:**
+3. **Wildcard Subdomain Sites (Hosted sites) Handler PHP Configuration:**
    * Open your browser and navigate to the Turbo server GUI: `http://localhost/admin:`
    * Navigate to `localhost` and select the wildcard (`*`) subdomain.
    * Configure the Preprocessor for the `php` extension, pointing to your local PHP binary (e.g., `C:\php\php-cgi.exe` or `/usr/bin/php-cgi`).
