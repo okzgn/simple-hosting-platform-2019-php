@@ -1,22 +1,20 @@
 # Simple Hosting Platform
 
-A high-performance, lightweight, multi-tenant multi-site web hosting and CMS engine built in native PHP without database dependencies.
-
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 ![PHP](https://img.shields.io/badge/PHP-7.4%20%7C%208.x-777BB4?style=flat&logo=php&logoColor=white)
-![Architecture](https://img.shields.io/badge/Architecture-Flat--File%20%7C%20Multi--Tenant-orange)
+
+A high-performance, lightweight, multi-tenant, multi-site web hosting and CMS engine built in native PHP without database dependencies.
 
 ---
 
 ## 📋 Overview
 
-**Simple Hosting Platform** is a self-contained, multi-tenant multi-site web hosting and lightweight CMS engine. It handles automated tenant provisioning, real-time resource metering (bandwidth and disk usage), access control, and tenant management without relying on database systems.
+**Simple Hosting Platform** is a self-contained, multi-tenant, multi-site web hosting and lightweight CMS engine. It handles automated tenant provisioning, real-time resource metering (bandwidth and disk usage), access control, and tenant management without relying on database systems.
 
-All platform data—including configurations, accounts, resource quotas, and sessions—is managed via **flat-files** using thread-safe file-locking mechanisms (`flock`) to maintain data integrity under concurrent requests.
+All platform data—including configurations, accounts, resource quotas, and sessions—is managed via **flat files** using thread-safe file-locking mechanisms (`flock`) to maintain data integrity under concurrent requests.
 
 ---
 
-## ✨ Key Features
+## 📌 Key Features
 
 * **Multi-Tenant Architecture:** Centralized core (`/c3`) serving multiple isolated tenant environments. Updates to the core instantly apply across all tenant sites.
 * **Database-Free (Flat-File):** Serialized array storage utilizing file-locking mechanisms (`flock`) for thread-safe operations in high-concurrency scenarios.
@@ -26,14 +24,13 @@ All platform data—including configurations, accounts, resource quotas, and ses
   * *Automated Quota Enforcement:* Suspends or restricts access upon exceeding allocated limits.
 * **Native Brute-Force Defense:** Built-in rate-limiting firewall (`security.php`) that dynamically throttles and blocks suspicious IP addresses based on request frequency.
 * **Password Security:** Implements native PHP `password_hash()` (Bcrypt) and `password_verify()` across all administration panels.
-* **Built-In File Manager & WYSIWYG Editor:** Fully integrated file browser (upload, rename, move, delete) and TinyMCE visual editor for HTML manipulation.
-* **Automated Tenant Provisioning:** Instant site creation via zip template extraction with configurable trial periods (10-minute default / coupon extension support).
+* **Built-In File Manager & WYSIWYG Editor:** Fully integrated file browser (navigation, upload, rename, move, delete) and `TinyMCE` visual editor for HTML manipulation (can be replaced with another like `Monaco`).
+* **Automated Tenant Provisioning:** Instant site creation via ZIP template extraction with configurable trial periods (10-minute default / coupon extension support).
 
 ---
 
 ## 🛠️ System Requirements
 
-* **Web Server:** [Turbo](https://turbo.okzgn.com).
 * **PHP Version:** PHP 7.4 or PHP 8.x.
 * **Required PHP Extensions:**
   * `php-zip`
@@ -41,6 +38,7 @@ All platform data—including configurations, accounts, resource quotas, and ses
   * `php-session`
   * `php-mbstring`
   * `php-gd` (optional)
+* **Web Server:** [Turbo](https://turbo.okzgn.com) (included, v2.3.rc3, for Windows & Linux, AMD64).
 
 ---
 
@@ -48,24 +46,27 @@ All platform data—including configurations, accounts, resource quotas, and ses
 
 **localhost:**
 ```text
-├── #                                   # Wildcard-subdomains sites handler
+├── #                                   # Wildcard subdomain sites handler
 │   └── @
 │       ├── c3/                         # CENTRAL CORE ENGINE
 │       │   ├── adapter.php             # Routing & request adapter
-│       │   ├── apanel/                 # Tenant Client Admin Panel
+│       │   ├── apanel/                 # Tenant client admin panel
 │       │   ├── requests/               # Static/Dynamic request handlers
 │       │   ├── security/               # Anti-brute-force rate limiter
 │       │   └── uses/                   # Sessions, timezone, and utilities
 │       │
-│       ├── legacy.localhost/           # MASTER SITE (Order Console & Master Admin)
-│       │   ├── cfg/docs/               # Master Administration Panels
-│       │   └── dynamics.php            # Primary dynamic router
+│       ├── legacy.localhost/           # HOSTING SITE (Admin & Order Console)
+│       │   ├── cfg/docs/               # Hosting administration panels
+│       │   ├── dynamics.php            # Hosting primary dynamic router
+│       │   └── ...                     # Hosting static assets (e.g., editor)
 │       │
-│       ├── prueba.localhost/           # Hosted Tenant Site 1
-│       └── @/                          # Shared assets (CSS/JS)
+│       ├── prueba.localhost/           # HOSTED TENANT Site Demo
+│       │
+│       └── ...                         # Hosting config & cost files (do not edit manually)
 │
-├── @                                   # Main site handler & assets
+├── @                                   # MAIN SITE landing page & assets
 ```
+**NOTE:** Folder names like `@` or `#` are Turbo server conventions. You can visit its [documentation](https://turbo.okzgn.com) or check out the [repository](https://github.com/okzgn/turbo-go).
 
 ---
 
@@ -73,33 +74,51 @@ All platform data—including configurations, accounts, resource quotas, and ses
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/okzgn/simple-hosting-platform-php.git
+   git clone https://github.com/okzgn/simple-hosting-platform-2019-php.git
    ```
 
-2. **Main Site Server Configuration:**
-   * Enter `http://localhost/admin:`.
-   * Navigate to `localhost` site root.
-   * Configure MIME for empty extension as `text/html; charset=UTF-8`.
-   * Configure an Index named `inicio`.
-   * Enable `Redirect to HTTPS` (testing SSL certificates).
+2. **Run Server:**
+   Enter the project directory and execute the Turbo server binary:
 
-3. **Wildcard-Subdomains Site Handler Configuration:**
-   * Enter `http://localhost/admin:`.
-   * Navigate to `localhost` wildcard subdomain.
-   * Configure Rewrite for `/` to `/c3/requests.php?site={SITE}&first_site={FIRST_SITE}&dir={DIR}&file={FILE}&type={EXT}`.
-   * Configure Rewrite for `/apanel/` to `/c3/apanel/requests.php?site={SITE}&first_site={FIRST_SITE}&dir={DIR}&file={FILE}&type={EXT}&request={REWRITE_COMPLEMENT}&query={FIRST_QUERY}`.
-   * Configure Rewrite for `/cfg/` to `/c3/apanel/r/404.php`.
-   * Configure Preprocessor for `php` extension to your PHP binary (e.g., `C:\php\php-cgi.exe` or `/usr/bin/php-cgi`).
-   * Enable `Redirect to HTTPS` (testing SSL certificates).
+   * **On Linux / macOS:**
+     ```bash
+     cd ./simple-hosting-platform-2019-php/
+     chmod +x ./turbo
+     ./turbo
+     ```
+   * **On Windows (Command Prompt / PowerShell):**
+     ```cmd
+     cd simple-hosting-platform-2019-php
+     turbo.exe
+     ```
 
-4. **Production & Custom Domain Configuration Notes:**
-   > 📌 **Important for Production Deployment:**  
-   > By default, the codebase references `legacy.localhost` as the master domain for local development and testing. When preparing for production:
-   > * Perform an exhaustive global search-and-replace across the entire project for `legacy.localhost` and replace all occurrences with your actual master domain (e.g., `yourdomain.com`).
-   > * Ensure your DNS record includes a Wildcard A/AAAA record (`*.yourdomain.com`) pointing to your server's IP address so automated tenant subdomains resolve correctly.
+3. **Wildcard Subdomain Sites Handler PHP Configuration:**
+   * Open your browser and navigate to the Turbo Admin Panel: `http://localhost/admin:`
+   * Navigate to `localhost` and select the wildcard (`*`) subdomain.
+   * Configure the Preprocessor for the `php` extension, pointing to your local PHP binary (e.g., `C:\php\php-cgi.exe` or `/usr/bin/php-cgi`).
 
-5. **Save Server Configuration & Test It**
-  **IMPORTANT:** Note that the Turbo web server root folder must be set to the parent directory of the project's localhost folder.
+4. **Save Server Configuration & Test It:**
+   * Access the Main Site at `http://localhost/` or the Hosting Site at `http://legacy.localhost/` to place orders.
+   * To manage orders, visit `http://legacy.localhost/orders/panel`.
+   * To access the master admin panel, visit `http://legacy.localhost/admin/panel`.
+   * Default credentials:
+     * **User:** `admin`
+     * **Password:** `adminpwd`
+
+   > ⚠️ **IMPORTANT:** Change the default credentials (`admin` / `adminpwd`) immediately after logging in for the first time at `http://legacy.localhost/admin/panel`.
+
+   > 💡 **Local Subdomains Note:** Modern browsers automatically resolve `*.localhost` to `127.0.0.1`. If your system does not, add `127.0.0.1 legacy.localhost` to your system's `hosts` file.
+
+   * **NOTE:** The Turbo server root folder must be set to the parent directory of the project's `localhost` folder, usually `simple-hosting-platform-2019-php`.
+
+---
+
+## 🌐 Production & Custom Domain Configuration
+
+By default, the codebase references `legacy.localhost` as the master domain for local development and testing. When preparing for production:
+
+* Perform an exhaustive global search-and-replace across the entire project for `legacy.localhost` and replace all occurrences with your actual master domain (e.g., `yourdomain.com`).
+* Ensure your DNS provider includes a Wildcard A/AAAA record (`*.yourdomain.com`) pointing to your server's IP address so automated tenant subdomains resolve correctly.
 
 ---
 
