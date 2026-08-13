@@ -14,7 +14,12 @@ if(!isset($_SESSION['C'])){
 			fclose($I);
 			exit;
 		}
+
 		$_SESSION['C'] = $S;
+		if (empty($_SESSION['C']['login']['password'])) {
+            $_SESSION['C']['login']['password'] = password_hash($_SESSION['C']['login']['password'], PASSWORD_DEFAULT);
+		}
+
 		unset($S);
 		fclose($I);
 	} else {
