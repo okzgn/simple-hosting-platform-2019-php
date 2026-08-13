@@ -1,0 +1,22 @@
+.t {
+	display: none;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.95);
+	padding: 1rem;
+	border-radius: 1rem;
+	color: #e0e0e0;
+}
+.I {
+	display: block;
+	opacity: 0;
+	animation: I 0.125s ease-in-out 0s normal 1 forwards;
+}
+@keyframes I { to { opacity: 1; } }
+.O {
+	opacity: 1;
+	animation: O 0.125s ease-in-out 0s normal 1 forwards;
+}
+@keyframes O {
+	99% { opacity: 0; }
+	to { display: none; }
+}

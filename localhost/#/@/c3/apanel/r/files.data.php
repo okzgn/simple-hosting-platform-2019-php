@@ -1,0 +1,1 @@
+<?php return ['S' => ['.' => 1, '..' => 1], 'D' => ['.' => 1, '..' => 1, 'cfg' => 1, 'editor' => 1, 'dynamics.php' => 1], 'E' => [], 'U' => ['x' => 1, 'php' => 1, 'run' => 1, 'sh' => 1], 'M' => 20, 'N' => (80 + strlen($_SERVER['DOCUMENT_ROOT'] . '/' . $_GET['site'] . '/'))]; ?>

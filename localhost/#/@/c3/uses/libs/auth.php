@@ -1,0 +1,1 @@
+<?php class authUses { function hash($str, $method = 'whirlpool'){ return hash($method, $str); } } ?>

@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>OKZGN - Políticas vigentes</title>
+	<link rel="icon" href="i.png">
+	<link rel="manifest" href="m.json">
+
+	<meta charset="utf-8">
+	<meta name="description" content="Políticas (o normas) que se aplican a visitantes, clientes, sitios web, aplicaciones, acuerdos y servicios de OKZGN.">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="author" content="OKZGN">
+	<meta name="theme-color" content="#004e9b">
+
+	<meta property="og:title" content="Políticas vigentes">
+	<meta property="og:description" content="Políticas (o normas) que se aplican a visitantes, clientes, sitios web, aplicaciones, acuerdos y servicios de OKZGN.">
+	<meta property="og:image" content="https://localhost/i.png">
+	<meta property="og:url" content="https://localhost">
+	<meta property="og:site_name" content="OKZGN">
+	<meta property="og:type" content="website">
+
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+
+	<link rel="stylesheet" href="m.old.css">
+	<style>
+	h2 {
+		background: linear-gradient(to right, #fff, transparent);
+		padding: 1.5rem 1rem;
+		font-size: 2rem;
+	}
+	main h3 {
+		margin-top: 1.5rem;
+		font-size: 1.5rem;
+		background: linear-gradient(to right, #004e9b 50%, transparent);
+		padding: 1rem;
+		color: #f0f0f0;
+		text-shadow: 0 0 0.625rem #004e9b;
+	}
+	h4 { font-size: 1.25rem; }
+	h5 { font-size: 1rem; }
+	h2, h4, main ol { color: #808080; }
+	h4, h5, p { padding: 1rem 1rem 0 1rem; }
+	main ol {
+		padding: 1rem 1rem 0 2.375rem;
+		font-weight: bold;
+	}
+	main li {
+		margin-bottom: 0.375rem;
+		padding-left: 0.625rem;
+	}
+
+	main { padding: 0 25% 2rem 25%; }
+	@media screen and (max-width: 960px){ main { padding: 0 15% 2rem 15%; } }
+	@media screen and (max-width: 640px){
+		main { padding: 0 0 2rem 0; }
+		main h3 { border-radius: 0; }
+	}
+	</style>
+</head>
+<body>
+	<div id="M">
+		<input type="checkbox" id="m"><label for="m"><b></b><b></b><b></b></label>
+		<nav>
+			<ol>
+				<li><a href="/inicio">Inicio</a></li>
+				<li><a><b>Políticas vigentes</b></a></li>
+			</ol>
+		</nav>
+	</div>
+	<header>
+		<h1><img src="l.old.svg" alt="OKZGN"></h1>
+	</header>
+	<main>
+		<h2>Políticas vigentes</h2>
+		<ol>
+			<li><a href="#intro">Introducción</a></li>
+			<li><a href="#concepts">Conceptos</a></li>
+			<li><a href="#terms">Condiciones de uso</a></li>
+			<li><a href="#delivery">Activación de servicios</a></li>
+			<li><a href="#online">Uso y continuidad de servicios</a></li>
+			<li><a href="#payments">Pagos de servicios</a></li>
+			<li><a href="#privacy">Privacidad y protección de datos</a></li>
+			<li><a href="#changes">Cambios en las políticas</a></li>
+			<li><a href="#acceptance">Aceptación de políticas</a></li>
+		</ol>
+
+		<h3 id="intro">1. Introducción</h3>
+		<p>Las presentes políticas (o normas) se aplican a visitantes, clientes, sitios web, aplicaciones, acuerdos y servicios de OKZGN. Están vigentes desde el día <b>miércoles 12 de agosto de 2026</b>.</p>
+
+		<h3 id="concepts">2. Conceptos</h3>
+		<p>El texto de las políticas vigentes se entenderá como la <a target="_blank" href="https://rae.es">Real Academia Española</a> enseña, con las excepciones de palabras o expresiones referentes a los títulos de los subítems 4.2.3, 4.2.4 y los del ítem 2, que significan lo que contienen.</p>
+		<h5>2.1. Activar o activación</h5>
+		<p>Iniciar la ejecución o desarrollo del servicio respectivo.</p>
+		<h5>2.2. Soporte en línea</h5>
+		<p>Contacto: <a target="_blank" href="https://okzgn.com/#contact">https://okzgn.com/#contact</a><br><br>Medios válidos de comunicación y aportación de datos entre clientes o visitantes y OKZGN.</p>
+		<h5>2.3. Procesamiento</h5>
+		<p>Recepción y realización de las actividades de visitantes o clientes de cada sitio web o aplicación.</p>
+		<h5>2.4. Conexiones simultáneas</h5>
+		<p>Visitantes y clientes que usan cada sitio web o aplicación al mismo tiempo y que reciben respuesta a sus actividades.</p>
+		<h5>2.5. Transferencia saliente</h5>
+		<p>Información que visitantes y clientes ven, generan, descargan, solicitan o reciben de manera explícita o implícita en/de cada sitio web o aplicación.</p>
+		<h5>2.6. Espacio de almacenamiento</h5>
+		<p><i>Megabytes</i> o <i>gigabytes</i> proporcionados para contener información de cada sitio web o aplicación.</p>
+		<h5>2.7. Información privada</h5>
+		<p>Uno o varios nombres de usuarios, contraseñas y datos especificados como privados, incluidos en acuerdos de servicios.</p>
+		<h5>2.8. Visitantes</h5>
+		<p>Personas, páginas web o aplicaciones que entran en, o usan, mediante cualquier medio, sitios web, aplicaciones o servicios de OKZGN.</p>
+		<h5>2.9. Clientes</h5>
+		<p>Personas con acuerdos de servicios vigentes con OKZGN.</p>
+		<h5>2.10. Acuerdo de servicio(s)</h5>
+		<p>Solicitud o pedido de persona(s) para comprar y obtener uno o varios servicios de OKZGN, evaluado(s) y aprobado(s) entre ambas partes.</p>
+		<h5>2.11. Sitios web</h5>
+		<p>Cualquier página o sitio web que use uno o más servicios de OKZGN.</p>
+		<h5>2.12. Aplicaciones</h5>
+		<p>Cualquier aplicación que use uno o más servicios de OKZGN.</p>
+		<h5>2.13. Nombres no permitidos</h5>
+		<p>De carácter ofensivo, vulgar, degradante, sexual, discriminatorio, y similares. O nombres reservados a criterio de OKZGN, por ejemplo, para uso exclusivo.</p>
+
+		<h3 id="terms">3. Condiciones de uso</h3>
+		<p>Para visitantes o clientes: respetar las leyes respectivas del país y localidad de donde provienen. No degradar, interferir o alterar el funcionamiento, rendimiento, información de sitios web, aplicaciones, servicios, imagen o reputación de marca, logotipos, isotipos y derechos de autor de OKZGN. Además, conocer, entender, aceptar todas las políticas vigentes y cumplirlas.</p>
+
+		<h3 id="delivery">4. Activación de servicios</h3>
+		<p>Cada acuerdo de servicio(s) será activado durante el plazo máximo.</p>
+		<h4>4.1. Plazo máximo</h4>
+		<p>7 días a partir de la verificación del pago completo o parcial del acuerdo de servicio(s), con excepción de servicios personalizados.</p>
+		<h4>4.2. Servicios personalizados</h4>
+		<p>Uno o varios de los siguientes subítems, serán activados o postergados dependiendo del criterio y evaluación de OKZGN.</p>
+		<h5>4.2.1. Direcciones o dominios web</h5>
+		<p>Los clientes deben solicitar la activación mediante soporte en línea.<br>Se denegará usar nombres no permitidos. Por ejemplo: <a target="_blank" href="https://localhost">localhost</a></p>
+		<h5>4.2.2. Direcciones internas o subdominios web</h5>
+		<p>Se denegará utilizar nombres no permitidos, y si se usaran, OKZGN podrá cambiarlos. Por ejemplo: <a target="_blank" href="https://legacy.localhost">legacy.localhost</a></p>
+		<h5>4.2.3. Plantillas de páginas web</h5>
+		<p>Los clientes deben solicitar la activación y aportar datos que OKZGN requiera mediante soporte en línea. Cada plantilla es un <b>archivo HTML</b> con <b>nombre especificado</b> y <b>contenido de guía</b> para rellenarlo o modificarlo.<br>OKZGN conservará temporalmente una copia, aunque no se responsabiliza por desconocimiento de HTML o errores ajenos. No incluirá traspasar contenido(s) a la plantilla, podrá elegir o denegar cualquier aspecto para/de la plantilla y ampliar o reducir el plazo para elaborarla y requerir datos.</p>
+		<h5>4.2.4. Componentes funcionales</h5>
+		<p>Los clientes deben solicitar la activación y aportar datos que OKZGN requiera mediante soporte en línea. Cada componente funcional es un <b>archivo JavaScript o de extensión X</b> con <b>nombre especificado</b>, y si es necesario, se incluirá un <b>archivo HTML o TXT</b> con el <b>mismo nombre</b> y <b>ejemplos de uso</b> e <b>instrucciones técnicas</b>.<br>OKZGN conservará temporalmente una copia, aunque no se responsabiliza por desconocimiento de lenguajes de programación o errores ajenos, no permitirá editar el/los archivo(s) de extensión X, podrá elegir o denegar cualquier aspecto de/para el componente funcional y ampliar o reducir el plazo para elaborarlo y requerir datos.</p>
+
+		<h3 id="online">5. Uso y continuidad de servicios</h3>
+		<h4>5.1. Relación con clientes o visitantes</h4>
+		<p>OKZGN no tiene relación con los motivos, propósitos, datos, las actividades ni consecuencias del uso de sitios web, aplicaciones o servicios, de clientes o visitantes.</p>
+		<h4>5.2. Servicios web</h4>
+		<p>Conllevan que la información vista, existente, interna, guardada, descargada, generada o solicitada por: todas las visitas (incluido clientes) y sus actividades, según su proporción, consumirán las capacidades de procesamiento, conexiones simultáneas, transferencias salientes o espacios de almacenamiento de sitios web o aplicaciones respectivos a cada cliente.</p>
+		<h4>5.3. Suspensión o aplazo temporal</h4>
+		<p>OKZGN puede aplazar y suspender temporalmente (por lo general, lapsos de minutos u horas) con o sin previo aviso: servicios, acuerdos de servicios e implicaciones. Por una de las siguientes causas, pero no limitarse a estas, sin reparación o compensación de las consecuencias:<br>&mdash; Falta de aportación de dato(s) o cooperación de clientes.<br>&mdash; Actualización de infraestructura o mantenimiento técnico indispensable.<br>&mdash; Uso inadecuado de servicios, sitios web o aplicaciones.<br>&mdash; Agotar la capacidad de procesamiento, conexiones simultáneas, transferencia saliente o espacio de almacenamiento.</p>
+		<h4>5.4. Terminación e invalidación total o parcial</h4>
+		<p>OKZGN puede terminar o invalidar total o parcialmente (en lo posible, con previo aviso): servicios, acuerdos de servicios e implicaciones. Por una de las siguientes causas, pero no limitarse a estas, sin reparación o compensación de las consecuencias:<br>&mdash; Incumplimiento o desacuerdo con/de las políticas vigentes.<br>&mdash; Dato(s) o contenido(s) de tipo: ilegal, malicioso, pornográfico, extremista, engañoso, violento, terrorista, racista, discriminatorio, depravado, ofensivo, degradante, o similar.</p>
+
+		<h3 id="payments">6. Pagos de servicios</h3>
+		<p>Los costos, opciones y métodos de pago estarán especificados en cada acuerdo de servicio(s) a través de soporte en línea o el sitio web principal de OKZGN.</p>
+        <h4>6.1. Devoluciones</h4>
+		<p>La devolución de valores pagados por acuerdos de servicios se efectuarán mediante solicitudes a través de soporte en línea y convenio con OKZGN.</p>
+
+		<h3 id="privacy">7. Privacidad y protección de datos</h3>
+		<p>OKZGN no comparte ni expone información privada de clientes o visitantes. La trata con medidas de seguridad (como el protocolo <a target="_blank" href="https://es.wikipedia.org/wiki/https">HTTPS</a>), aunque no garantiza respaldar o resguardar ninguna información, a excepción de conservar temporalmente copias de plantillas de páginas web y componentes funcionales.</p>
+		<h4>7.1. 'Cookies' y datos guardados en navegadores</h4>
+		<p>OKZGN guardará, si considera necesario, datos y 'cookies' en el navegador de clientes o visitantes para distinguir visitas y el funcionamiento de sitios web, aplicaciones o servicios.</p>
+		<h4>7.2. Información compartida</h4>
+		<p>OKZGN podrá mostrar autoría de las obras o implicaciones de acuerdos de servicios y publicarla de la(s) manera(s) que decida.</p>
+
+		<h3 id="changes">8. Cambios en las políticas</h3>
+		<p>OKZGN puede actualizar las políticas vigentes cuando considere necesario, cambiando así las políticas anteriores, siendo responsabilidad de clientes o visitantes revisarlas periódicamente y entenderlas bien.</p>
+		<h4>8.1. Políticas personalizadas</h4>
+		<p>Los clientes o visitantes pueden solicitar, dialogar y acordar servicios con políticas personalizadas con la aprobación de OKZGN.</p>
+
+		<h3 id="acceptance">9. Aceptación de políticas</h3>
+		<p>Los clientes o visitantes, al acordar o usar cualquier servicio, entrar, o estar en sitios web o aplicaciones de OKZGN, confirman que lo/los usarán de manera adecuada, que conocen, entienden, aceptan y cumplirán todas las políticas vigentes.</b>
+	</main>
+</body>
+</html>

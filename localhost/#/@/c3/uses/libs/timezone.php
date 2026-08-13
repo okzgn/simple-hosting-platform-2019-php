@@ -1,0 +1,1 @@
+<?php class timezoneUses { function __construct($A = 'America/Guayaquil'){ ini_set('date.timezone', $A); } } ?>

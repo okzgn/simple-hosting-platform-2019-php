@@ -1,0 +1,38 @@
+[data-communicate] {
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+	display: none;
+}
+[data-communicate], [data-communicate] .x {
+	width: 100%;
+	height: 100%;
+}
+[data-communicate] .x {
+	cursor: pointer;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #211539;
+}
+.in {
+	display: block;
+	opacity: 0;
+	animation: A 0.25s linear 0s normal 1 forwards;
+}
+@keyframes A {
+	to {
+		opacity: 1;
+		background: rgba(0, 0, 0, 0.33);
+	}
+}
+.out {
+	opacity: 1;
+	animation: B 0.25s linear 0s normal 1 forwards;
+}
+@keyframes B {
+	99% { opacity: 0; }
+	to { display: none; }
+}

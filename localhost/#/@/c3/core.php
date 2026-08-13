@@ -1,0 +1,1 @@
+<?php class C3 { function __get($mod){ require_once($mod . '/mod.get.php'); $mod .= 'Get'; return new $mod; } function __set($mod, $arg){ require_once($mod . '/mod.set.php'); $mod .= 'Set'; new $mod($arg); } } ?>

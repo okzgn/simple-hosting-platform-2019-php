@@ -1,0 +1,415 @@
+:root {
+	--mainColor: #004e9b;
+	--mainTrans: rgba(0, 78, 155, 0.5);
+	--secondColor: #808080;
+	--thirdColor: #ccc;
+	--white: #f0f0f0;
+	--whiteTrans: rgba(240, 240, 240, 0.66);
+	--black: #000;
+	--darkBlue: #03047a;
+	--darkBlueTrans: rgba(3, 4, 122, 0.85);
+	--darkBlueTrans2: rgba(3, 4, 122, 0.75);
+	--darkBlueTrans3: rgba(3, 4, 122, 0.5);
+	--deepPurple: #7127a4;
+	--deepPurpleTrans: rgba(113, 39, 164, 0.5);
+	--lightBlue: #3e8bd9;
+	--lightShadow: rgba(0, 0, 0, 0.125);
+	--lightShadow2: rgba(0, 0, 0, 0.25);
+	--lightShadow3: rgba(0, 0, 0, 0.5);
+	--lightShadow4: rgba(0, 0, 0, 0.75);
+	--lightTrans: rgba(255, 255, 255, 0.125);
+	--lightTrans2: rgba(255, 255, 255, 0.25);
+	--lightTrans3: rgba(255, 255, 255, 0.5);
+	--lightAquaTrans: rgba(128, 255, 255, 0.5);
+
+	--web: rgb(255, 204, 51);
+	--webTrans: rgba(255, 204, 51, 0.66);
+	--art: rgb(102, 204, 204);
+	--artTrans: rgba(102, 204, 204, 0.66);
+	--graphic: rgb(255, 102, 89);
+	--graphicTrans: rgba(255, 102, 89, 0.66);
+	--editor: rgb(170, 170, 170);
+	--editorTrans: rgba(170, 170, 170, 0.66);
+}
+@font-face {
+	font-family: 'A';
+	src: url(fr.ttf);
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'A';
+	src: url(fb.ttf);
+	font-weight: bold;
+}
+*, ::after, ::before {
+	outline: 0;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scrollbar-color: var(--black) var(--secondColor);
+	scrollbar-width: thin;
+	scroll-behavior: smooth;
+	transition: all 0.125s;
+	font-family: 'A', helvetica;
+	font-size: inherit;
+	word-spacing: 0.25rem;
+	line-height: 1.25;
+}
+:active, :focus {
+	outline: 0;
+	-webkit-tap-highlight-color: transparent;
+}
+::selection {
+	opacity: 1;
+	background: var(--black) !important;
+	color: var(--secondColor);
+}
+::placeholder {
+	color: var(--white);
+	opacity: 0.5;
+}
+::-webkit-scrollbar {
+	width: 0.25rem;
+	height: 0.25rem;
+}
+::-webkit-scrollbar-thumb { background: var(--black); }
+::-webkit-scrollbar-track { background: var(--secondColor); }
+html, body {
+	width: 100%;
+	height: 100%;
+}
+a {
+	text-decoration: none;
+	color: var(--thirdColor);
+}
+a, a::before, a::after { cursor: crosshair; }
+a:hover, a:active, a:focus { color: var(--secondColor); }
+html { background-color: var(--mainColor); }
+ol, ul { list-style: none; }
+body {
+	overscroll-behavior: none;
+	text-align: left;
+	font-size: 1rem;
+	color: var(--white);
+	text-shadow: 0 0.05rem 0.05rem var(--lightShadow);
+	cursor: grab;
+}
+
+header {
+	padding: 1rem;
+	display: flex;
+}
+h1 {
+	line-height: 0 !important;
+	position: relative;
+}
+h1 img {
+	height: 3rem;
+	filter: drop-shadow(0 0.05rem 0.05rem var(--lightShadow));
+}
+#A, #B, #C, #D {
+	z-index: -1;
+	position: fixed;
+}
+#A, #B, #C, #D {
+	width: 150vh;
+	height: 150vh;
+}
+#A {
+	background: radial-gradient(closest-side, var(--deepPurple), transparent);
+	top: -75vh;
+	right: -75vh;
+	animation: A 15s ease-out 0s alternate infinite;
+}
+@keyframes A {
+	66% {
+		width: 200vh;
+		height: 200vh;
+		top: -90vh;
+		right: -75vh;
+	}
+	to {
+		width: 150vh;
+		height: 150vh;
+		top: -75vh;
+		right: 0;
+	}
+}
+#B {
+	background: radial-gradient(closest-side, var(--lightBlue), transparent);
+	top: -75vh;
+	left: -25vh;
+	animation: B 10s ease-in-out 2.5s alternate infinite;
+}
+@keyframes B {
+	50% {
+		top: -100vh;
+		left: -50vh;
+	}
+	to {
+		width: 200vh;
+		height: 200vh;
+		top: -150vh;
+		left: -25vh;
+	}
+}
+#C {
+	background: radial-gradient(closest-side, var(--darkBlue), transparent);
+	bottom: -75vh;
+	right: -75vh;
+	animation: C 15s ease-in-out 1.25s alternate infinite;
+}
+@keyframes C {
+	to {
+		bottom: -100vh;
+		right: 0;
+	}
+}
+#D {
+	z-index: -2;
+	background: radial-gradient(closest-side, var(--lightAquaTrans), transparent);
+	bottom: -75vh;
+	left: calc(50vw - 75vh);
+	animation: D 10s ease-in-out 0s alternate infinite;
+}
+@keyframes D {
+	to {
+		bottom: -37.5vw;
+		left: -25vw;
+	}
+}
+
+#M input, #M label, nav {
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+#M.M > a {
+	background: linear-gradient(to bottom, var(--black), var(--darkBlueTrans3));
+	display: block !important;
+	padding: 1rem 2rem;
+	position: fixed;
+	top: 0;
+	left: -7rem;
+	opacity: 0;
+	animation: I 0.5s ease-out 0s normal forwards, J 7s ease-in-out 0s alternate infinite;
+	border-bottom-right-radius: 2rem;
+	line-height: 0;
+}
+#M.M > a img { height: 3rem; }
+h1, #M.M > a { z-index: 3; }
+@keyframes I {
+	to {
+		left: 0;
+		opacity: 1;
+	}
+}
+@keyframes J { to { border-radius: 0; } }
+@media screen and (max-width: 640px), (max-width: 960px) {
+	#M label, #M label b { cursor: crosshair; }
+	#M input, #M label { display: none; }
+	nav, #M ol {
+		display: flex;
+		flex-flow: row;
+	}
+	#M ol { align-self: center; }
+	#M li { margin-right: 1.5rem; }
+	#M li:last-child { margin: 0 !important; }
+	#M a b { color: var(--secondColor); }
+	#M > a { display: none; }
+	nav {
+		justify-content: center;
+		display: block;
+		background: var(--darkBlueTrans) linear-gradient(135deg, var(--lightBlue), transparent);
+		width: 5%;
+		height: 5vh;
+		overflow: hidden;
+		z-index: 1;
+		display: none;
+		animation: E 0.25s ease-in-out 0s normal 1 forwards, G 5s linear 2s alternate infinite;
+		border-radius: 50%;
+		box-shadow: 0;
+	}
+	nav, nav li { opacity: 0; }
+	nav li { animation: F 0.25s ease-in-out 0.125s normal 1 forwards; }
+	nav li:last-child { margin-bottom: 0; }
+	nav li a {
+		display: block;
+		padding: 0.5rem 0 0.25rem 0;
+		box-shadow: 0 0 0.5rem var(--lightShadow);
+	}
+	nav li a:hover, nav li a:focus, nav li a:active, nav li a.A, nav li a.B {
+		transform: scale(1.125);
+		background: linear-gradient(to left, transparent, var(--lightShadow2), transparent);
+		box-shadow: 0 0 0.5rem var(--lightsTrans);
+	}
+	nav li a.A {
+		color: var(--white) !important;
+		background: linear-gradient(to left, transparent, var(--lightTrans2), transparent);
+	}
+	nav li a.A, nav li a.B {
+		color: var(--white) !important;
+		font-weight: bold;
+	}
+	nav li a::after {
+		content: '';
+		display: block;
+		margin-top: 0.25rem;
+		width: 50%;
+		height: 0.15rem;
+		position: relative;
+		transform: rotate3d(0, 0, 1, 90deg);
+		left: -25%;
+		opacity: 0;
+	}
+	nav li a:hover::after, nav li a:focus::after, nav li a:active::after, nav li a.A::after {
+		filter: drop-shadow(0 0.05rem 0.05rem var(--lightShadow));
+		background: linear-gradient(to right, var(--secondColor), transparent);
+		transform: rotate3d(0, 0, 0, 0deg);
+		left: 0;
+		opacity: 1;
+		transition: all 0.25s;
+		animation: H 0.4s ease-in-out 0.125s alternate infinite;
+	}
+	@keyframes H {
+		to {
+			left: 50%;
+			background: linear-gradient(to right, transparent, var(--secondColor));
+		}
+	}
+	@keyframes G {
+		to {
+			background-color: var(--darkBlue);
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+	@keyframes F { to { opacity: 1; } }
+	@keyframes E {
+		50% {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		75% { box-shadow: 0; }
+		to {
+			border-radius: 2rem;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+			width: 66%;
+			height: 100vh;
+			opacity: 1;
+			box-shadow: 0 0 5rem var(--darkBlue);
+		}
+	}
+	#M input, #M label { display: block; }
+	#M input { visibility: hidden; }
+	#M label {
+		z-index: 2;
+		padding: 1.675rem 1rem;
+	}
+	#M.M label {
+		border-bottom-left-radius: 2rem;
+		padding: 1.675rem 2rem;
+		background: linear-gradient(to bottom, var(--black), var(--darkBlueTrans3));
+		animation: J 7s ease-in-out 0s alternate infinite;
+	}
+	#M label b {
+		position: relative;
+		display: block;
+		width: 1.75rem;
+		height: 0.375rem;
+		border-radius: 0.25rem;
+		background: var(--white);
+		filter: drop-shadow(0 0.05rem 0.05rem var(--lightShadow));
+	}
+	#M label b:first-child, #M label b:first-child + b, nav li { margin-bottom: 0.25rem; }
+	#M input:checked + label { background: transparent !important; }
+	#M input:checked + label b { background: var(--white); }
+	#M label:hover b, #M label:active b, #M label:focus b,
+	#M input:checked + label:hover b, #M input:checked + label:active b, #M input:checked + label:focus b { background: var(--secondColor); }
+	#M input:checked + label b:first-child {
+		transform: rotate(45deg);
+		top: 0.625rem;
+	}
+	#M input:checked + label b:first-child + b { opacity: 0; }
+	#M input:checked + label b:last-child {
+		top: -0.625rem;
+		transform: rotate(-45deg);
+	}
+	#M input:checked + label + nav { display: block; }
+	#M ol {
+		flex-flow: column;
+		height: 100%;
+		justify-content: center;
+		text-align: center;
+	}
+	#M li { margin-right: 0; }
+	#M a:hover, #M a:active, #M a:focus { color: var(--secondColor); }
+}
+
+@media screen and (max-width: 640px){
+	#M > a { display: none; }
+	@keyframes G { to { background-color: var(--darkBlue); } }
+	@keyframes E {
+		50% { border-top-right-radius: 0; }
+		to {
+			width: 100%;
+			height: 100vh;
+			border-radius: 0;
+			opacity: 1;
+		}
+	}
+}
+
+@media screen and (min-width: 961px){
+	#M > input, #M label { display: none; }
+	#M > a { display: none !important; }
+
+	#M.M nav ol {
+		background: linear-gradient(to bottom, var(--black), var(--darkBlueTrans3));
+		border-bottom-left-radius: 2rem;
+		padding: 1rem;
+	}
+	#M.M nav a.A { color: var(--lightAquaTrans); }
+	#M.M nav a.A::after { background: var(--lightAquaTrans); }
+
+	#M nav ol {
+		padding: 1rem 0;
+		display: flex;
+		height: 5rem;
+		overflow: hidden;
+		justify-content: flex-end;
+		animation: J 7s ease-in-out 0s alternate infinite;
+	}
+	#M nav li {
+		align-self: center;
+		font-weight: bold;
+	}
+	#M nav a {
+		display: inline-block;
+		padding: 0.85rem;
+		position: relative;
+	}
+	#M nav a.A {
+		color: var(--secondColor);
+		top: 0.15rem;
+	}
+	#M nav a.A::after {
+		content: '';
+		display: block;
+		height: 0.15rem;
+		margin-top: 0.15rem;
+		background: var(--secondColor);
+	}
+	#M nav a.A, #M nav a:hover, #M nav a:active, #M nav a:focus { transform: scale(1.1); }
+}
+
+h2 {
+	background: linear-gradient(to bottom, transparent, var(--lightShadow));
+	padding: 2rem 2rem 1.5rem 2rem;
+	font-size: 2rem;
+	color: var(--lightAquaTrans);
+	text-align: center;
+	text-shadow: 0 0.05rem 0.05rem var(--lightShadow), 0 0 1rem var(--lightShadow2);
+}

@@ -1,0 +1,787 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>OKZGN</title>
+	<link rel="icon" href="i.png">
+	<link rel="manifest" href="m.json">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="description" content="Diseño y programación web. Facilitamos crear, actualizar, administrar y promover páginas, aplicaciones o negocios web a personas, grupos y empresas.">
+	<meta name="author" content="OKZGN">
+	<meta name="theme-color" content="#000000">
+
+	<meta property="og:title" content="OKZGN">
+	<meta property="og:description" content="Diseño y programación web. Facilitamos crear, actualizar, administrar y promover páginas, aplicaciones o negocios web a personas, grupos y empresas.">
+	<meta property="og:image" content="https://localhost/i.png">
+	<meta property="og:url" content="https://localhost">
+	<meta property="og:site_name" content="OKZGN">
+	<meta property="og:type" content="website">
+
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+
+	<link rel="stylesheet" href="m.css">
+	<style>
+#Start,
+#Start > div fieldset,
+#Behind section,
+#Behind ul a,
+#Services > ul,
+#Services > ul > li,
+#Websites > ul,
+#Websites li a {
+	display: flex;
+	flex-flow: row;
+}
+
+#Behind section,
+#Services ul,
+#Websites > ul { flex-wrap: wrap; }
+
+#Behind section > * { margin: 1rem; }
+
+#Behind section > *,
+#Behind ul a > * { align-self: center; }
+
+#Behind, #Behind section { justify-content: center; }
+
+#Behind {
+	display: flex;
+	flex-flow: column;
+	background: var(--lightShadow2);
+	overflow: hidden;
+}
+
+#Behind section { padding: 1rem; }
+#Behind section a:hover, #Behind section a:active, #Behind section a:focus { transform: scale(1.125); }
+#Behind section > a {
+	width: 128px;
+	height: 128px;
+	filter: drop-shadow(0 0.05rem 0.05rem var(--lightShadow)) drop-shadow(0 0 5rem var(--lightBlue));
+}
+#Behind section > a img {
+	width: 100%;
+	height: 100%;
+}
+#Behind ul a img {
+	height: 2rem;
+	margin-right: 1rem;
+	filter: invert(80%) drop-shadow(0 0.05rem 0.05rem var(--lightShadow));
+}
+#Behind ul li { margin-top: 1rem; }
+#Behind ul li:first-child { margin-top: 0; }
+#Behind ul a:hover img, #Behind ul a:active img, #Behind ul a:focus img { filter: invert(50%) drop-shadow(0 0.05rem 0.05rem var(--lightShadow)); }
+#Behind .S { color: var(--lightAquaTrans); }
+
+@media screen and (max-width: 960px) {
+	#Behind section > a {
+		width: calc(20% - 2rem);
+		height: calc(20% - 2rem);
+		margin-left: 12.5%;
+	}
+	#Behind section > a + p {
+		width: calc(50% - 2rem);
+		margin-right: 12.5%;
+	}
+}
+
+@media screen and (max-width: 480px), (max-width: 640px) {
+	#Behind section > a { margin-left: 0; }
+	#Behind section > a + p { margin-right: 0; }
+}
+@media screen and (max-width: 640px) {
+	#Behind section > a {
+		width: calc(30% - 2rem);
+		height: calc(30% - 2rem);
+	}
+	#Behind section > a + p { width: calc(70% - 2rem); }
+}
+
+@media screen and (max-width: 480px) {
+	#Behind section > a {
+		width: calc(40% - 2rem);
+		height: calc(40% - 2rem);
+	}
+	#Behind section > a + p { width: calc(60% - 2rem); }
+}
+
+#Websites li,
+#Services > ul > li {
+	flex-flow: column;
+	justify-content: center;
+}
+#Services > ul { background: radial-gradient(circle at center, var(--white), transparent 7%); }
+#Services > ul > li {
+	width: 50%;
+	height: 50vh;
+	min-height: 16rem;
+	padding: 2rem;
+	overflow: hidden;
+}
+#Services > ul > li:nth-child(even) {
+	text-align: right;
+	direction: rtl;
+}
+#Services > ul > li:nth-child(odd) li::before,
+#Services > ul > li:nth-child(even) li::before {
+	display: inline-block;
+	font-weight: bold;
+	color: var(--thirdColor);
+}
+#Services > ul > li:nth-child(odd) li::before {
+	content: '>';
+	margin-right: 1rem;
+}
+#Services > ul > li:nth-child(even) li::before {
+	content: '>';
+	margin-left: 1rem;
+}
+#Services > ul > li:nth-child(odd) li { padding-left: 2rem; }
+#Services > ul > li:nth-child(even) li { padding-right: 2rem; }
+#Services > ul > li li {
+	text-indent: -1rem;
+	border-bottom: 1px dashed var(--lightTrans2);
+	padding-bottom: 0.25rem;
+	margin-bottom: 0.25rem;
+}
+#Services > ul > li li:last-child { border-bottom: 0; }
+#Services h3 {
+	font-size: 1.5rem;
+	margin-bottom: 1.625rem;
+}
+#w {
+	background: linear-gradient(175deg, transparent 15%, var(--webTrans));
+	border-bottom-right-radius: 4rem;
+	animation: _A 7s ease-in-out 0s alternate infinite;
+}
+#w h3 { color: var(--web); }
+#a {
+	background: linear-gradient(-175deg, transparent 15%, var(--artTrans));
+	border-bottom-left-radius: 4rem;
+	animation: _A 7s ease-in-out 0s alternate infinite;
+}
+#a h3 { color: var(--art); }
+#g {
+	background: linear-gradient(5deg, transparent 15%, var(--graphicTrans));
+	border-top-right-radius: 4rem;
+	animation: _A 7s ease-in-out 0s alternate infinite;
+}
+#g h3 { color: var(--graphic); }
+#e {
+	background: linear-gradient(-5deg, transparent 15%, var(--editorTrans));
+	border-top-left-radius: 4rem;
+	animation: _A 7s ease-in-out 0s alternate infinite;
+}
+#e h3 { color: var(--editor); }
+@keyframes _A {
+	to {
+		border-radius: 0;
+	}
+}
+@media screen and (min-width: 961px) and (max-width: 1280px) {
+	#w { font-size: 0.8rem; }
+}
+@media screen and (max-width: 640px), (max-width: 960px) {
+	#Services > ul {
+		flex-flow: column;
+		background: none;
+	}
+	#Services > ul > li {
+		width: 100%;
+		height: auto;
+	}
+	#Services h2 {
+		border-bottom-left-radius: 4rem;
+		animation: _A 7s ease-in-out 0s alternate infinite;
+	}
+	#w {
+		background: linear-gradient(170deg, transparent 15%, var(--webTrans));
+		animation: _A 7s ease-in-out 0.5s alternate infinite;
+		font-size: 1rem;
+	}
+	#a {
+		background: linear-gradient(-170deg, transparent 15%, var(--artTrans));
+		animation: _A 7s ease-in-out 1s alternate infinite;
+	}
+	#g {
+		background: linear-gradient(170deg, transparent 15%, var(--graphicTrans));
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 4rem;
+		animation: _A 7s ease-in-out 1.5s alternate infinite;
+	}
+	#e {
+		background: linear-gradient(-170deg, transparent 15%, var(--editorTrans));
+		border-top-left-radius: 0rem;
+		border-bottom-left-radius: 4rem;
+		animation: _A 7s ease-in-out 2s alternate infinite;
+	}
+}
+
+#Websites li {
+	width: 33%;
+	align-self: center;
+}
+#Websites a { padding: 2rem; }
+#Websites a:hover, #Websites a:active, #Websites a:focus {
+	background: var(--white);
+	color: var(--black);
+}
+#Websites li:nth-child(odd){ background: var(--lightTrans); }
+#Websites img {
+	object-fit: cover;
+	width: 40%;
+	flex-grow: 0;
+	margin-right: 2rem;
+}
+#Websites p {
+	flex: 1;
+	align-self: center;
+}
+#Websites b:first-child {
+	display: inline-block;
+	font-size: 1.25rem;
+	margin-bottom: 0.6875rem;
+}
+@media screen and (min-width: 961px) and (max-width: 1800px){
+	#Websites li { width: 50%; }
+	#Websites li:nth-child(odd){ background: none; }
+	#Websites li:nth-child(4n + 1), #Websites li:nth-child(4n + 4){ background: var(--lightTrans); }
+}
+@media screen and (max-width: 960px){
+	#Websites ul { flex-flow: column; }
+	#Websites li { width: 100%; }
+}
+@media screen and (max-width: 480px){
+	#Websites ul { flex-flow: column; }
+	#Websites li { width: 100%; }
+	#Websites li a {
+		flex-flow: column;
+		padding: 2rem;
+	}
+	#Websites img {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 1rem;
+	}
+}
+
+#Start {
+	width: 100%;
+	height: 100vh;
+	min-height: 25rem;
+	background: url(v.png) center center no-repeat;
+	background-size: 120% 60%;
+}
+#Start h3 {
+	font-size: 4rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	text-shadow: 0 0 1rem var(--black);
+	color: var(--web);
+}
+#Start h3 sub, #Start > div input[type="submit"] { font-size: 1.5rem; }
+#Websites b:first-child, #Start h3 sub, #Z .O p b:first-child { text-transform: uppercase; }
+#Start h3 sub {
+	color: var(--thirdColor);
+	display: block;
+	margin-bottom: 0.675rem;
+	font-weight: normal;
+}
+#Start > div,
+#Start > form,
+#Start > form fieldset {
+	display: flex;
+	flex-flow: column;
+}
+#Start > div,
+#Start > form {
+	justify-content: center;
+	padding: 2rem;
+}
+#Start > div {
+	width: 70%;
+	background: url(p.png) right center no-repeat;
+}
+#Start > form { width: 30%; }
+#Start > div form { margin-top: 1rem; }
+#Start > div ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+#Start > div ul li {
+	color: var(--white);
+	padding: 0.75rem 1rem 0.75rem 3rem;
+	filter: drop-shadow(0 0.05rem 0.05rem var(--lightShadow4)) drop-shadow(0 0 0.5rem var(--black));
+	font-weight: bold;
+	background: url(v.svg) center left no-repeat;
+	background-size: 2.6rem 1.7rem;
+	font-size: 1.1rem;
+}
+#Start input { padding: 1rem 2rem; }
+#Start input, #Start > form {
+	animation: J 7s ease-in-out 0s alternate infinite;
+	border-radius: 2rem;
+}
+#Start input[type="text"], #Start input[type="password"], #Start input[type="submit"] { border: 0.15rem solid var(--white); }
+#Start > div input[type="text"] {
+	background: var(--darkBlueTrans3);
+	color: var(--white);
+}
+#Start input[type="text"]:hover,
+#Start input[type="text"]:active,
+#Start input[type="text"]:focus,
+#Start input[type="password"]:hover,
+#Start input[type="password"]:active,
+#Start input[type="password"]:focus,
+#Start input[type="text"]:hover::placeholder,
+#Start input[type="text"]:active::placeholder,
+#Start input[type="text"]:focus::placeholder,
+#Start input[type="password"]:hover::placeholder,
+#Start input[type="password"]:active::placeholder,
+#Start input[type="password"]:focus::placeholder {
+	border-color: var(--web);
+	color: var(--web);
+}
+#Start input[type="submit"] {
+	background: var(--white);
+	color: var(--black);
+	font-weight: bold;
+	padding: 0.75rem 2rem;
+	cursor: pointer;
+	margin-left: 1rem;
+}
+#Start input[type="submit"]:hover,
+#Start input[type="submit"]:active,
+#Start input[type="submit"]:focus { transform: scale(0.9); }
+#Start > div input[type="submit"]:hover,
+#Start > div input[type="submit"]:active,
+#Start > div input[type="submit"]:focus {
+	background: var(--web);
+	border-color: var(--web);
+	color: var(--black);
+}
+#Start > form {
+	background: linear-gradient(to bottom, var(--darkBlueTrans3), var(--darkBlueTrans2));
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	overflow: hidden;
+}
+#Start > form h3 sub { color: var(--lightBlue); }
+#Start > form input[type="text"],
+#Start > form input[type="password"] {
+	width: 15rem;
+	background: none;
+	padding-left: 0;
+	padding-right: 0;
+	border-radius: 0;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	color: var(--white);
+}
+#Start > form input[type="submit"] {
+	margin: 1rem 0 0 0;
+	border-color: var(--mainColor);
+	background: var(--mainColor);
+	font-size: 1.25rem;
+	color: var(--white);
+	width: 8rem;
+}
+#Start > form input[type="submit"]:hover,
+#Start > form input[type="submit"]:active,
+#Start > form input[type="submit"]:focus {
+	background: var(--black);
+	border-color: var(--black);
+}
+@media screen and (max-width: 960px) {
+	#Start { background-size: 125% 50%; }
+}
+@media screen and (max-width: 640px), (max-width: 960px) {
+	#Start h3 { font-size: 3rem; }
+	#Start h3 sub, #Start input[type="submit"] { font-size: 1.25rem !important; }
+	#Start > div { width: 65%; }
+	#Start > form { width: 35%; }
+	#Start input[type="text"],
+	#Start input[type="password"] { width: 12.5rem !important; }
+}
+@media screen and (max-width: 640px) {
+	#Start {
+		background-size: 200% 50%;
+		height: auto;
+	}
+	#Start, #Start > div fieldset { flex-flow: column; }
+
+	#Start > div,
+	#Start > div form,
+	#Start > form,
+	#Start input[type="text"],
+	#Start input[type="password"] { width: 100% !important; }
+	#Start > form {
+		border-radius: 0;
+		animation: none;
+	}
+
+	#Start > div > * { align-self: center; }
+
+	#Start input[type="submit"] {
+		margin: 1rem 0 0 0;
+		font-size: 1.125rem !important;
+		align-self: center;
+		width: auto !important;
+	}
+	#Start h3 {
+		text-align: center;
+		line-height: 1;
+	}
+
+	#Start > div ul {
+		flex-flow: column;
+		margin-top: 0.25rem;
+	}
+	#Start > div ul li {
+		padding: 0.5rem 1rem 0.5rem 2.5rem;
+		background-size: 1.95rem 1.27rem;
+		font-size: 1.05rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#Start > div ul {
+		flex-flow: column;
+		margin-top: 0.25rem;
+	}
+	#Start > div ul li {
+		padding: 0.25rem 1rem 0.25rem 2rem;
+		background-size: 1.30rem 0.85rem;
+		font-size: 1rem;
+	}
+}
+
+[data-hidden] { display: none !important; }
+#Z {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+	animation: _B 0.125s linear 0s normal forwards;
+	opacity: 0;
+}
+@keyframes _B { to { opacity: 1; } }
+#Z fieldset {
+	align-self: center;
+	padding: 2rem;
+	background: linear-gradient(to top, var(--black), var(--darkBlueTrans));
+	text-align: center;
+	max-width: 25rem;
+	word-break: break-word;
+	border-radius: 2rem;
+	box-shadow: 0 0 5rem var(--darkBlue);
+}
+#Z [data-text] {
+	margin-bottom: 1rem;
+	font-size: 1.25rem;
+}
+#Z button {
+	padding: 1rem;
+	color: var(--white);
+	cursor: crosshair;
+}
+#Z button:hover,
+#Z button:active,
+#Z button:focus { transform: scale(0.9); }
+#Z [data-accept] {
+	background: var(--mainColor);
+	font-weight: bold;
+	cursor: pointer;
+}
+#Z [data-cancel] {
+	margin-left: 1rem;
+	background: var(--darkBlueTrans3);
+}
+#Z .W b {
+	position: relative;
+	top: 0;
+}
+#Z .W b, #Z i { display: inline-block; }
+#Z i {
+	color: var(--secondColor);
+	margin-right: 0.25rem;
+}
+#Z .W b:nth-child(8), #Z .W b:nth-child(9), #Z .W b:nth-child(10) { margin-left: 0.25rem; }
+#Z .W b:nth-child(1) { animation: _C 0.375s ease-in-out 0s alternate infinite;  }
+#Z .W b:nth-child(2) { animation: _C 0.375s ease-in-out 0.125s alternate infinite; }
+#Z .W b:nth-child(3) { animation: _C 0.375s ease-in-out 0.25s alternate infinite; }
+#Z .W b:nth-child(4) { animation: _C 0.375s ease-in-out 0.375s alternate infinite; }
+#Z .W b:nth-child(5) { animation: _C 0.375s ease-in-out 0.5s alternate infinite; }
+#Z .W b:nth-child(6) { animation: _C 0.375s ease-in-out 0.625s alternate infinite; }
+#Z .W b:nth-child(7) { animation: _C 0.375s ease-in-out 0.75s alternate infinite; }
+#Z .W b:nth-child(8) { animation: _C 0.375s ease-in-out 0.875s alternate infinite; }
+#Z .W b:nth-child(9) { animation: _C 0.375s ease-in-out 1s alternate infinite; }
+#Z .W b:nth-child(10) { animation: _C 0.375s ease-in-out 1.125s alternate infinite; }
+@keyframes _C {
+	to {
+		top: -0.375rem;
+		color: var(--secondColor);
+	}
+}
+#Z button, #Z .O p { border-radius: 1rem; }
+#Z fieldset, #Z button, #Z .O p { animation: J 7s ease-in-out 0s alternate infinite; }
+#Z [data-text]:not(.W) b { color: var(--web); }
+#Z .E { color: var(--graphic); }
+#Z .O p {
+	border: 0.15rem solid var(--mainColor);
+	border-color: var(--mainColor);
+	margin: 1rem 0;
+	padding: 1rem;
+}
+	</style>
+	<script>
+	document.addEventListener("DOMContentLoaded", function(A, B, C, D, E, F){
+		$ = function(a, b, c, d, e, f, g, h, i){
+			(i = this), Z.call((!i.id ? i : i.id), function(){
+				f = typeof b == 'function',
+				h = function(g){
+					d = (!f ? d : c), d = (typeof d != 'function' ? function(a, b){ console.error(b + ': ' + a); } : d),
+					(delete A.dataset.load), d.call(this, g, this.status);
+				}
+				e = new XMLHttpRequest(),
+				e.onerror = function(){ h.call(this, $.A.aI); },
+				e.onabort = function(){ h.call(this, $.A.aX); },
+				e.onload = function(){
+					g = this.responseText;
+					switch(this.status){
+						case 200:
+						case 201:
+						case 304:
+							if(g = Y(g)){ return h.call(this, g); }
+							(delete A.dataset.load), (!f ? c : b).call(this, this.responseText, this.status);
+						break;
+						default: h.call(this, g);
+					}
+				},
+				e.open((!i.method ? 'POST' : i.method), a), e.send(!f ? b : null);
+				if(!i.unobtrusive){ A.dataset.load = ''; }
+			}, 234);
+		};
+		$.A = {
+			aI: 'Intente nuevamente',
+			aX: 'Petición cancelada',
+			aB: 'Sin respuesta'
+		};
+		function V(a, b, c, d, e){
+			if(typeof b != 'function' && typeof c != 'function'){ return; }
+			d = new IntersectionObserver(function(h){
+				h.forEach(function(i, j, k){
+					if(!i.isIntersecting){ return c.call(i.target, i); }
+					j = i.intersectionRect,
+					k = ((j.width * j.height) / (window.innerWidth * window.innerHeight));
+					if(i.intersectionRatio > 0.49 || k > 0.49){ return b.call(i.target, 'A', j); }
+					if(i.intersectionRatio > 0.24 || k > 0.24){ return b.call(i.target, 'B', j); }
+					c.call(i.target);
+				});
+			}, { threshold: [0,0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1,0.11,0.12,0.13,0.14,0.15,0.16,0.17,0.18,0.19,0.2,0.21,0.22,0.23,0.24,0.25,0.26,0.27,0.28,0.29,0.3,0.31,0.32,0.33,0.34,0.35,0.36,0.37,0.38,0.39,0.4,0.41,0.42,0.43,0.44,0.45,0.46,0.47,0.48,0.49,0.5,0.51,0.52,0.53,0.54,0.55,0.56,0.57,0.58,0.59,0.6,0.61,0.62,0.63,0.64,0.65,0.66,0.67,0.68,0.69,0.70,0.71,0.72,0.73,0.74,0.75,0.76,0.77,0.78,0.79,0.8,0.81,0.82,0.83,0.84,0.85,0.86,0.87,0.88,0.89,0.9,0.91,0.92,0.93,0.94,0.95,0.96,0.97,0.98,0.99,1] });
+			if(e = document.querySelectorAll(a)){ e.forEach(function(j){ d.observe(j); }); }
+		}
+		if(E = document.getElementById('Z')){
+			if(D = document.querySelector('#Start > div form')){
+				D.onsubmit = function(a, b, c, d){
+					a.preventDefault(), b = new FormData(D), c = b.get(D.dataset.startField), d = D.querySelector('[name="' + D.dataset.startField + '"]');
+					if(!d){ return X('alert', $.A.aI); }
+					if(c != d.value){ c = d.value; }
+					if(c.length < d.dataset.minlength){ return X('alert', d.dataset.minlengthError).C.className = 'E'; }
+					if(c.length > d.dataset.maxlength){ return X('alert', d.dataset.maxlengthError).C.className = 'E'; }
+					if(!new RegExp(d.dataset.pattern).test(c)){ return X('alert', d.dataset.patternError).C.className = 'E'; }
+					X(
+						'confirm',
+						D.dataset.confirm.replace('{NAME}', c.charAt(0).toUpperCase() + c.slice(1).toLowerCase()).replace('{NAME_LOWER}', c.toLowerCase()),
+						function(e, f){
+							b.set('n', c), b.set('u', c);
+							$(D.action, b,
+								function(h, i){ i = X('alert', h), i.C.className = 'O', i.C.innerHTML = D.dataset.finish.replace(/\{NAME_LOWER\}/g, c.toLowerCase()).replace('{NAME_EXACT}', c), i.A.innerText = D.dataset.finishButton; },
+								function(h, i){ i = X('alert', h), i.C.className = 'E', i.A.innerText = D.dataset.finishButton; }
+							);
+							e = X('alert', D.dataset.wait), e.C.className = 'W';
+							return 1;
+						}
+					);
+				};
+			}
+			function X(a, b, c, d){
+				E.removeAttribute('class'), (delete E.dataset.hidden);
+				if(E.C){ E.C.removeAttribute('class'), E.C.innerHTML = b; }
+				switch(a){
+					case 'alert': E.A.removeAttribute('class'), E.B.dataset.hidden = '', E.A.innerText = E.A.dataset.alert; break;
+					case 'confirm': E.B.removeAttribute('class'), (delete E.B.dataset.hidden), E.A.innerText = E.A.dataset.confirm; break;
+				}
+				if(typeof c == 'function'){ E.A.F = c; }
+				if(typeof d == 'function'){ E.B.F = d; }
+				return E;
+			}
+			E.onclick = function(a){ if(a.target.id == 'Z'){ E.dataset.hidden = ''; } }
+			E.A = E.querySelector('[data-accept]');
+			E.B = E.querySelector('[data-cancel]');
+			E.C = E.querySelector('[data-text]');
+			E.A.onclick = function(a){
+				if(typeof this.F == 'function'){
+					a = this.F(E), (delete this.F);
+					if(a){ return; }
+				}
+				E.click();
+			}
+			E.B.onclick = E.A.onclick;
+			window.onkeydown = function(a, b){
+				switch(a.key){
+					case 'Escape': b = E.B; break;
+					case 'Enter': b = E.A; break;
+				}
+				if(b && typeof E.dataset.hidden == 'undefined'){ b.focus(), b.click(); }
+			}
+			if(F = document.querySelector('#Start > form')){
+				F.onsubmit = function(a, b, c, d, e){
+					a.preventDefault(), b = new FormData(F), c = b.get(F.dataset.mainField), d = F.querySelector('[name="' + F.dataset.mainField + '"]'), e = D.querySelector('[name="' + D.dataset.startField + '"]');
+					if(!d){ return X('alert', $.A.aI); }
+					if(c != d.value){ c = d.value; }
+					if(c.length < d.dataset.minlength){ return X('alert', e.dataset.minlengthError).C.className = 'E'; }
+					if(c.length > d.dataset.maxlength){ return X('alert', e.dataset.maxlengthError).C.className = 'E'; }
+					if(!new RegExp(d.dataset.pattern).test(c)){ return X('alert', e.dataset.patternError).C.className = 'E'; }
+					F.setAttribute('action', 'https://' + c + '.localhost/apanel/'), F.submit();
+				};
+			}
+		}
+		function Y(a){ return !a ? $.A.aB : a.indexOf('data-err') != -1 ? a : false; }
+		function Z(a, b, c){ c = this != window ? this : a, clearTimeout(Z[c]), Z[c] = setTimeout(a, b || 2345); }
+		if((A = document.getElementById('m')) && (B = document.querySelectorAll('#M nav a'))){ B.forEach(function(a){ a.onclick = function(){ A.checked = false; } }); }
+		if(C = document.getElementById('M')){ V('header', function(){ C.removeAttribute('class'); }, function(){ C.className = 'M'; }); }
+		V(
+			'main article',
+			function(a, b){ if(b = document.querySelector('[data-index] [href="#' + this.id + '"]')){ b.className = a; } },
+			function(a){ if(a = document.querySelector('[data-index] [href="#' + this.id + '"]')){ a.removeAttribute('class'); } }
+		);
+	});
+	</script>
+</head>
+<body>
+	<header>
+		<h1><img src="a.svg" alt="Logotipo de OKZGN"></h1>
+	</header>
+	<main>
+		<article id="Start">
+			<div>
+				<h3>Haz tu sitio web gratis</h3>
+				<ul>
+					<li>Dirección web</li>
+					<li>100 MB de almacenamiento</li>
+					<li>1 GB transferencia mensual</li>
+					<li>Panel de control seguro</li>
+					<li>Editor de páginas web</li>
+					<li>Administrador de archivos</li>
+				</ul>
+				<form action="https://legacy.localhost/order" data-wait="<b>C</b><b>r</b><b>e</b><b>a</b><b>n</b><b>d</b><b>o</b><b>.</b><b>.</b><b>.</b>" data-confirm="¿El sitio se llamará <b>{NAME}</b>?<br><br>Dirección web:<br><i>https://</i><b>{NAME_LOWER}</b>.localhost<br><br>Al crearlo acepta las <a target='_blank' href='/politicas-vigentes'><b>políticas vigentes</b></a>." data-start-field="i" data-finish-button="Entendido" data-finish="Sitio web creado:<br><a target='_blank' href='https://{NAME_LOWER}.localhost'><i>https://</i><b>{NAME_LOWER}</b>.localhost</a><p><b>Panel de control</b><br><br><b>Usuario:</b><br>{NAME_EXACT}<br><br><b>Contraseña:</b><br>No tiene (Pónsela luego)</p><a target='_blank' href='https://wa.me/593980670720'>Confirma que lo usarás al <i>(+593)</i><b>0980670720</b> enseguida, o se eliminará</a>.">
+					<fieldset>
+						<input type="text" name="i" data-minlength="5" data-maxlength="24" data-pattern="[a-z0-9]+" placeholder="Nombre del sitio" data-minlength-error="Nombre muy corto" data-maxlength-error="Nombre muy largo" data-pattern-error="De 5 a 24 letras minúsculas sin tilde, puntos, espacios ni símbolos">
+						<input type="hidden" name="n" value=""><input type="hidden" name="e" value="com"><input type="hidden" name="u" value=""><input type="hidden" name="p" value=""><input type="hidden" name="r" value=""><input type="hidden" name="k" value="FREE-12082026"><input type="hidden" name="t" value="1"><input type="hidden" name="c" value="0"><input type="hidden" name="s" value="100 MB"><input type="hidden" name="b" value="1 GB">
+						<input type="submit" value="Crear">
+					</fieldset>
+				</form>
+			</div>
+			<form data-main-field="s">
+				<fieldset>
+					<h3><sub>Acceso<br>panel de control</sub></h3>
+					<input type="hidden" name="action" value="enter">
+					<input type="text" name="s" data-minlength="5" data-maxlength="24" data-pattern="[a-z0-9]+" placeholder="Nombre del sitio">
+					<input type="text" name="u" placeholder="Usuario">
+					<input type="password" name="p" placeholder="Contraseña">
+					<input type="submit" value="Entrar">
+				</fieldset>
+			</form>
+		</article>
+		<article id="Services">
+			<h2>Servicios</h2>
+			<ul>
+				<li id="w">
+					<h3>Diseño Web</h3>
+					<ul>
+						<li>Compatibilidad con diferentes pantallas y navegadores</li>
+						<li>Creación de páginas e interfaces <i>frontend</i> rápidas y ligeras</li>
+						<li>Programación <i>backend</i> económica con varias tecnologías y lenguajes</li>
+						<li>Capacidad de bajo a alto tráfico para sitios, aplicaciones o sistemas</li>
+						<li>Desarrollo de aplicaciones móviles para Android y iOS</li>
+						<li>Inclusión de técnicas de posicionamiento en buscadores</li>
+					</ul>
+				</li>
+				<li id="a">
+					<h3>Diseño Artístico</h3>
+					<ul>
+						<li>Pintura al óleo, acrílico, aerosol y sintéticos</li>
+						<li>Ilustraciones a tinta, lápiz, carboncillo o color</li>
+						<li>Plasmado a escala en superficies grandes o murales</li>
+					</ul>
+				</li>
+				<li id="g">
+					<h3>Diseño Gráfico</h3>
+					<ul>
+						<li>Documentación de sistemas de diseño</li>
+						<li>Invención de logotipos, marcas, arte digital y publicitario</li>
+						<li>Retoque o recomposición de imágenes fotográficas</li>
+					</ul>
+				</li>
+				<li id="e">
+					<h3>Diseño Editorial</h3>
+					<ul>
+						<li>Traspaso, revisión y maquetación de texto</li>
+						<li>Redacción de artículos de fácil lectura o comprensión</li>
+						<li>Elaboración de folletos y libros digitales para impresión</li>
+					</ul>
+				</li>
+			</ul>
+		</article>
+		<article id="Websites">
+			<h2>Sitios web hospedados</h2>
+			<ul>
+				<li><a target="_blank" href="https://legacy.localhost"><img src="s/legacy.localhost.png" alt="Server Legacy"><p><b>Server Legacy</b><br>Sistema web para economizar costos y gastos al mantener páginas o sitios web sin perder rendimiento, control ni facilidad de administración.</p></a></li>
+				<li><a target="_blank" href="https://prueba.localhost"><img src="s/prueba.localhost.png" alt="Server Legacy"><p><b>Plantilla Prueba</b><br>Plantilla base de página web de Server Legacy.</p></a></li>
+			</ul>
+		</article>
+		<article id="Behind">
+			<h2>Contacto</h2>
+			<section>
+				<a target="_blank" href="https://okzgn.com/#contact"><img src="f.png" alt="Elías Alvarado Soshina"></a>
+				<p><a class="S" target="_blank" href="ttps://okzgn.com/#contact"><b>Elías Alvarado Soshina</b></a><br>Diseñador y programador web detrás de OKZGN.<br>Lea las <a target="_blank" href="/politicas-vigentes"><b>políticas vigentes</b></a> para sitios web hospedados, privacidad y condiciones de uso.</p>
+				<ul>
+					<li><a target="_blank" href="https://wa.me/593980670720"><img src="w.svg" alt="OKZGN"><span><i>(+593)</i> <b>0980670720</b></span></a></li>
+					<li><a target="_blank" href="https://okzgn.com"><b>https://okzgn.com</b></a></li>
+				</ul>
+			</section>
+		</article>
+	</main>
+	<div id="A"></div>
+	<div id="B"></div>
+	<div id="C"></div>
+	<div id="D"></div>
+	<div id="M">
+		<a href="https://localhost"><img src="k.png" alt="Isotipo de OKZGN"></a>
+		<input type="checkbox" id="m"><label for="m"><b></b><b></b><b></b></label>
+		<nav>
+			<ol data-index>
+				<li><a href="#Start">Inicio</a></li>
+				<li><a href="#Services">Servicios</a></li>
+				<li><a href="#Websites">Sitios web</a></li>
+				<li><a href="#Behind">Contacto</a></li>
+			</ol>
+		</nav>
+	</div>
+	<div id="Z" data-hidden>
+		<fieldset>
+			<div data-text></div>
+			<button data-accept data-alert="Aceptar" data-confirm="Sí">Sí</button><button data-cancel>No</button>
+		</fieldset>
+	</div>
+</body>
+</html>

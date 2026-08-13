@@ -1,0 +1,30 @@
+form iframe { width: 100%; }
+form p {
+	margin-bottom: 1rem;
+	padding: 0;
+	height: 2.25rem;
+	overflow: hidden;
+	border-bottom: 1px solid #211539;
+}
+form iframe, form p span { display: none; }
+.L {
+	animation: L 0.5s ease 0s alternate infinite;
+	color: #fff;
+	padding-top: 0.5rem;
+	text-align: center;
+}
+@keyframes L {
+	to {
+		background: #f63;
+		color: #fff;
+	}
+}
+.L, .L span { display: block; }
+.O { animation: O 0.5s ease 0s normal 1 forwards; }
+@keyframes O {
+	to {
+		opacity: 0;
+		height: 0;
+		margin: 0;
+	}
+}

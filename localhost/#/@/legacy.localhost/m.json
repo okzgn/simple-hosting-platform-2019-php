@@ -1,0 +1,17 @@
+﻿{
+	"short_name": "Server Legacy",
+	"name": "OKZGN Server Legacy",
+	"description": "Sistema web para economizar los costos y gastos al mantener páginas o sitios de Internet sin perder rendimiento, control ni facilidad de administración.",
+	"icons": [
+		{
+			"src": "https://legacy.localhost/i.png",
+			"sizes": "200x200",
+			"type": "image/png"
+		}
+	],
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait",
+	"background_color": "rgb(33, 21, 57)",
+	"theme_color": "rgb(105, 32, 105)"
+}

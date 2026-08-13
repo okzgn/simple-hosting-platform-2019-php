@@ -1,0 +1,1 @@
+<?php class errorsUses { function __construct($A = 1){ ini_set('display_errors', $A); } } ?>

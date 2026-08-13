@@ -1,0 +1,11 @@
+﻿{
+"short_name": "OKZGN",
+"name": "OKZGN",
+"description": "Diseño y programación web. Facilitamos crear, actualizar, administrar y promover páginas, aplicaciones o negocios web a personas, grupos y empresas.",
+"icons": [{ "src": "./i.png", "sizes": "200x200", "type": "image/png" }],
+"start_url": "/",
+"display": "standalone",
+"orientation": "portrait",
+"background_color": "rgb(240, 240, 240)",
+"theme_color": "rgb(0, 78, 155)"
+}

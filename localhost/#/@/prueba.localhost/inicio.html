@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PRUEBA</title>
+	<link rel="icon" href="icono.png">
+
+	<meta charset="utf-8">
+	<meta name="description" content="Descripci&oacute;n de PRUEBA">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="author" content="OKZGN">
+
+	<meta property="og:title" content="PRUEBA">
+	<meta property="og:description" content="Descripci&oacute;n de PRUEBA">
+	<meta property="og:image" content="https://prueba.localhost/icono.png">
+	<meta property="og:url" content="https://prueba.localhost/">
+	<meta property="og:site_name" content="PRUEBA">
+	<meta property="og:type" content="website">
+
+	<style>
+*,::before,::after{box-sizing:inherit}::before,::after{text-decoration:inherit;vertical-align:inherit}html{box-sizing:border-box;cursor:default;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}article,aside,footer,header,nav,section,figcaption,figure,main{display:block}body{line-height:1}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}ol,ul{list-style:none;padding:0}pre{font-family:monospace,monospace;font-size:1em}a{text-decoration:none;background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title],dfn[title]{border-bottom:0;text-decoration:underline;text-decoration:underline dotted}del{text-decoration:line-through}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff9;color:#000}small{font-size:80%}sub,sup{font-size:77%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}::-moz-selection{background-color:#000;color:#fff;text-shadow:none}::selection{background-color:#000;color:#fff;text-shadow:none}audio,canvas,iframe,img,svg,video,input,select{vertical-align:middle}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg{fill:currentColor}svg:not(:root){overflow:hidden}table{border-collapse:collapse;border-spacing:0}body,h1,h2,h3,h4,h5,h6,button,input,optgroup,select,textarea,ul,p,fieldset{margin:0}fieldset{border:0;padding:0}button,input,select,textarea{background-color:transparent;color:inherit;font:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}button,html [type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto;resize:vertical}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-cancel-button,[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}a,area,button,input,label,select,summary,textarea,[tabindex]{-ms-touch-action:manipulation;touch-action:manipulation}[hidden]{display:none}[aria-busy="true"]{cursor:progress}[aria-controls]{cursor:pointer}[aria-hidden="false"][hidden]:not(:focus){clip:rect(0,0,0,0);display:inherit;position:absolute}[aria-disabled]{cursor:default}
+@font-face {
+	font-family: 'A';
+	src: url(letraNormal.ttf);
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'A';
+	src: url(letraNegrita.ttf);
+	font-weight: bold;
+}
+html, body, h1 img { height: 100%; }
+body {
+	background: linear-gradient(to bottom, #ddd, #eee, #ddd);
+	font: normal 100% 'A', helvetica;
+	word-spacing: 0.3rem;
+	color: #000;
+	line-height: 1;
+}
+a {
+	color: #039;
+	text-decoration: none;
+}
+a:hover, a:focus, a:active, #menu:hover, h2 { color: #f63; }
+a:hover, a:focus, a:active, #menu:hover { text-decoration: underline; }
+nav, aside, article, footer {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+}
+header {
+	background: linear-gradient(to right, #ccc, transparent);
+	color: #fff;
+	height: 5rem;
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-flow: row;
+	justify-content: flex-end;
+}
+h1 {
+	margin-left: 1rem;
+	height: 4rem;
+	flex: 1;
+}
+h2 { text-shadow: 0 1px #ccc, 0 0.75rem 1rem #808080; }
+a, #menu { -webkit-tap-highlight-color: transparent; }
+#menu {
+	flex: none;
+	display: none;
+}
+#menu b:first-child:after, #menu b:last-child:after { content: ''; }
+#menu b, #menu b:first-child:after, #menu b:last-child:after {
+	position: relative;
+	display: block;
+	background: #808080;
+	width: 0.5rem;
+	height: 0.5rem;
+	margin-right: 1rem;
+	border-radius: 0.5rem;
+	transition: all 0.25s;
+}
+#menu a:hover b, #menu a:active b, #menu a:focus b,
+#menu a:hover b:first-child:after, #menu a:active b:first-child:after, #menu a:focus b:first-child:after,
+#menu a:hover b:last-child:after, #menu a:active b:last-child:after, #menu a:focus b:last-child:after { background: #f63; }
+#menu b:first-child { left: 0.3375rem; }
+#menu b:first-child:after { left: -0.675rem; }
+#menu b:first-child { top: 0.4125rem; }
+#menu b:last-child { left: 0.3375rem; }
+#menu b:last-child:after { left: -0.675rem; }
+#menu b:last-child { top: -0.4125rem; }
+#menu b:last-child, #menu b:first-child + b { margin-top: 0.25rem; }
+#menu.S b:first-child, #menu.S b:first-child:after, #menu.S b:last-child, #menu.S b:last-child:after {
+	top: 0;
+	left: 0;
+}
+nav {
+	background: linear-gradient(to right, #fff, #eee);
+	box-shadow: 0 0 1rem #ccc;
+	transition: all 0.5s;
+	height: 3rem;
+}
+nav li {
+	float: left;
+	padding: 0.125rem 1rem;
+	margin: 0.875rem 0;
+	border-left: 1px solid #ccc;
+}
+nav li:first-child { border: 0; }
+main {
+	text-shadow: 0 0.75rem 1rem #808080;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	height: calc(100% - 8rem);
+}
+aside, article { width: 50%; }
+aside > *, h1, #menu { align-self: center; }
+aside {
+	background: #ddd;
+	overflow: hidden;
+}
+aside img {
+	height: 100%;
+}
+article {
+	font-size: 1.5em;
+	text-align: left;
+	padding: 1rem;
+}
+footer {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	background: linear-gradient(to top, #ccc, transparent);
+	text-shadow: 0 1px #ddd, 0 0 0.25rem #ddd, 0 0 0.5rem #ddd, 0 0 0.75rem #ddd, 0 0 1rem #ddd;
+	height: 3rem;
+}
+nav, #menu, #menu::selection, footer { color: #808080; }
+@media screen and (orientation: portrait){
+	#menu { display: block; }
+	nav {
+		display: none;
+		height: auto;
+		position: fixed;
+		top: 5rem;
+		left: 0;
+		width: 100%;
+	}
+	nav.S {
+		display: block;
+		top: 2.5rem;
+		opacity: 0;
+		animation: S 0.5s ease 0s normal 1 forwards;
+	}
+	@keyframes S {
+		to {
+			opacity: 1;
+			top: 5rem;
+		}
+	}
+	nav li {
+		float: none;
+		display: block;
+		text-align: center;
+		border: 0;
+		margin: 0;
+		padding: 1rem 0;
+		border-top: 1px solid #ccc;
+	}
+	nav li:first-child { border-top: 0; }
+	main {
+		flex-flow: column;
+		justify-content: flex-start;
+	}
+	aside, article { width: 100%; }
+	aside { flex: 1; }
+	article {
+		margin-top: 1rem;
+		text-align: center;
+	}
+}
+</style>
+<script>
+window.onload = function(x, y, z){
+	x = document.getElementById('menu');
+	y = document.getElementById('menu_list');
+	z = function(x, y){ x.className = (!y.test(x.className) ? (x.className + ' S') : x.className.replace(y, '')); };
+	x.onclick = function(n){ (n = /(^|\s)S(\s|$)/g), z(x, n), z(y, n); };
+};
+</script>
+</head>
+<body>
+<header>
+	<h1><img src="https://prueba.localhost/logotipo.png" alt="Logo de PRUEBA"></h1>
+	<div id="menu" class="S"><a href="#"><b></b><b></b><b></b></a></div>
+</header>
+<nav id="menu_list">
+	<ul>
+		<li>P&aacute;gina inicial</li>
+		<li><a href="/apanel/">Panel de administraci&oacute;n</a></li>
+	</ul>
+</nav>
+
+<main>
+	<aside>
+		<img src="https://prueba.localhost/foto.jpg" alt="Foto inicial">
+	</aside>
+	<article>
+		<h2>PRUEBA</h2>
+		<br>
+		<h3>Bienvenido(a)</h3>
+		<br>
+		<p>Est&aacute; en la p&aacute;gina inicial</p>
+	</article>
+</main>
+
+<footer>
+	<span>&copy; Pie de p&aacute;gina</span>
+</footer>
+</body>
+</html>
